@@ -1,5 +1,6 @@
 package org.bolyuk.bkcmmnlib;
 
+import java.io.File;
 import java.lang.reflect.Type;
 import java.util.*;
 
@@ -28,6 +29,10 @@ public class TinyDB<T> {
 
     public void remove(String id){
         FileUtil.remove(_initPath+"/"+id);
+    }
+
+    public void put(T object){
+        FileUtil.write(_initPath+"/"+UUID.randomUUID().toString(), object);
     }
 
     public void write(String id, T object){
