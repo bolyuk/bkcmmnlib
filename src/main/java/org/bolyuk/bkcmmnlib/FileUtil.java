@@ -30,6 +30,10 @@ public class FileUtil {
         return new File(path).list();
     }
 
+    public static void remove(String path){
+        new File(path).delete();
+    }
+
     public static String read(String path){
         File file = new File(path);
         AtomicReference<String> result = new AtomicReference<>("");

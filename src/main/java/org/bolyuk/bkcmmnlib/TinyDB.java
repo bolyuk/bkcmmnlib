@@ -26,6 +26,10 @@ public class TinyDB<T> {
         this._isSub=isSub;
     }
 
+    public void remove(String id){
+        FileUtil.remove(_initPath+"/"+id);
+    }
+
     public void write(String id, T object){
         FileUtil.write(_initPath+"/"+id, object);
     }
